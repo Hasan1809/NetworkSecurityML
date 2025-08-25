@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: NetworkSecurityML
+Version: 0.0.1
+Author: Hasan Khaled
+Author-email: abulsaadh@gmail.com
+License-File: LICENSE
+Requires-Dist: python-dotenv
+Requires-Dist: pandas
+Requires-Dist: numpy
+Requires-Dist: setuptools
+Requires-Dist: pymongo
+Requires-Dist: certifi
+Dynamic: author
+Dynamic: author-email
+Dynamic: license-file
+Dynamic: requires-dist
