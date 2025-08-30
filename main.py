@@ -6,6 +6,7 @@ from src.entity.config_entity import *
 from src.components.data_validation import DataValidation
 from src.entity.artifact_entity import DataIngestionArtifact , DataValidationArtifact , DataTransformationArtifact
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 if __name__ == "__main__":
     try:
@@ -37,5 +38,16 @@ if __name__ == "__main__":
         data_transformation_artifact = data_transformation.initiate_data_transformation()
         logging.info("Data transformation completed")
         print(data_transformation_artifact)
+    except Exception as e:
+        raise NetworkSecurityException(e, sys)
+    
+    
+    try:
+        model_trainer_config = ModelTrainerConfig(training_pipeline_config=training_pipeline_config)
+        model_trainer = ModelTrainer(model_trainer_config=model_trainer_config , data_transformation_artifact=data_transformation_artifact)
+        logging.info("Starting model trainer")
+        model_trainer_artifact = model_trainer.initiate_model_trainer()
+        logging.info("Model trainer completed")
+        print(model_trainer_artifact)
     except Exception as e:
         raise NetworkSecurityException(e, sys)
