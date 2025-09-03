@@ -3,3 +3,4 @@ venv/
 logs/
 Artifacts/
 final_model/
+__pycache__/
