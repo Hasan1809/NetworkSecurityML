@@ -5,6 +5,10 @@ setuptools
 certifi
 pymongo[srv]==4.0
 scikit-learn
-dill
 scipy
 pyaml
+mlflow==2.8.1
+dagshub
+fastapi
+uvicorn
+python-multipart
